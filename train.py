@@ -115,6 +115,7 @@ if __name__ == '__main__':
         max_epochs=150,
         callbacks=[early_stop_callback, lr_monitor, bar, checkpoint_callback],
         logger=[logger0, logger1],
+        precision=16,
         # limit_train_batches=0.01,
         # limit_val_batches=0.01,
     )
