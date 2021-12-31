@@ -3,7 +3,6 @@
 """
 
 import sys
-from tkinter.messagebox import NO
 import warnings
 import time
 
@@ -22,7 +21,7 @@ from pytorch_lightning.loggers import TensorBoardLogger
 from retinaface import RetinaFace
 
 
-# 定义进度条样式
+# 定义训练进度条样式
 class LitProgressBar(RichProgressBar):
 
     def __init__(self):
@@ -46,8 +45,8 @@ if __name__ == '__main__':
     parser.add_argument('--auto_lr', default=False)
     parser.add_argument('--debug', default=False)
     parser.add_argument('--input_size', default=[840, 840])
-    parser.add_argument('--batch_size', default=16)
-    parser.add_argument('--num_workers', default=8)
+    parser.add_argument('--batch_size', default=8)
+    parser.add_argument('--num_workers', default=4)
     parser.add_argument('--lr', default=1)
     parser.add_argument('--gpus', default=1)
     parser.add_argument('--data_dir', default="../dataset/widerface/")
@@ -122,4 +121,5 @@ if __name__ == '__main__':
 
     # 加载checkpoint并开始训练
     trainer.fit(Train_model,ckpt_path=opt.checkpoint_dir)
+
 
