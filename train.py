@@ -3,6 +3,7 @@
 """
 
 import sys
+from tkinter.messagebox import NO
 import warnings
 import time
 
@@ -50,7 +51,7 @@ if __name__ == '__main__':
     parser.add_argument('--lr', default=1)
     parser.add_argument('--gpus', default=1)
     parser.add_argument('--data_dir', default="../dataset/widerface/")
-    parser.add_argument('--checkpoint_dir', default="./lightning_logs/2021-12-24-19:28:51/checkpoints/epoch=23-val_loss=5.4494.ckpt")
+    parser.add_argument('--checkpoint_dir', default=None)
     opt = parser.parse_args()
 
     # 实例化模型
