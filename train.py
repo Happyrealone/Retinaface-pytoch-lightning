@@ -45,7 +45,7 @@ if __name__ == '__main__':
     parser.add_argument('--auto_lr', default=False)
     parser.add_argument('--debug', default=False)
     parser.add_argument('--input_size', default=[840, 840])
-    parser.add_argument('--batch_size', default=16)
+    parser.add_argument('--batch_size', default=12)
     parser.add_argument('--num_workers', default=6)
     parser.add_argument('--lr', default=1)
     parser.add_argument('--gpus', default=1)
